@@ -120,4 +120,16 @@ In plaats van het programma verder te laten uitvoeren tot het volgende breakpoin
 
 [![asciicast](img/stepping.svg)](https://asciinema.org/a/376462)
 
+# Variabelen printen
+
+De waarden van de meeste geldige C-expressies kunnen geprint worden door GDB:
+- `print expr` (`p`): Print de huidige waarde van `expr` af.
+- `display expr`: Print de waarde van `expr` af elke keer dat GDB stopt (voor bijvoorbeeld een breakpoint).
+  De waarde zal enkel afgeprint kunnen worden als `expr` geldig is binnen de huidige context.
+  Als het bijvoorbeeld verwijst naar lokale variabelen van een andere functie dan degene waar gestopt wordt, zal er een error geprint worden.
+
+Als je een `struct` print, zullen alle members getoond worden.
+
+[![asciicast](img/printing.svg)](https://asciinema.org/a/376470)
+
 [gdb]: https://www.gnu.org/software/gdb/
