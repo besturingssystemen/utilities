@@ -83,4 +83,29 @@ Ending remote debugging.
 [Inferior 1 (process 1) detached]
 </pre>
 
+# Breakpoints
+
+Een _breakpoint_ kan gebruikt worden om GDB automatisch te laten stoppen wanneer er een bepaald punt in het programma bereikt wordt.
+Wanneer GDB stopt, kan je weer commando's ingeven in de prompt.
+
+Er zijn meerdere manieren om de locatie van een breakpoint te geven via het `break` (`b`) commando:
+- `break symbol`: Zet een breakpoint wanneer het geven `symbol` (de naam van een functie) bereikt wordt.
+  Bijvoorbeeld: `break kalloc`.
+- `break filename:linenum`. Zet een breakpoint op een bepaalde lijn in een file.
+  Bijvoorbeeld: `break kernel/exec.c:52`.
+
+Je kan meerdere breakpoints tegelijkertijd zetten en GDB zal stoppen wanneer één van de breakpoint bereikt word.
+Nog een aantal handige commando's:
+- `info breakpoints`: Toon alle breakpoints.
+  Elke breakpoint heeft een identifier (`Num`) waarmee je ernaar kan verwijzen in andere commando's.
+- `enable/disable num`: Zet een breakpoint tijdelijk aan of uit.
+- `delete num`. Verwijder een breakpoint permanent.
+
+Als je klaar bent met het inspecteren van het programma tijdens een breakpoint, kan je de uitvoering verderzetten met `continue` (`c`).
+GDB zal dan uitvoeren tot aan het volgende breakpoint.
+
+Je kan GDB op elk moment handmatig stoppen door <kbd>CTRL</kbd>+<kbd>C</kbd> te typen.
+
+[![asciicast](img/breakpoints.svg)](https://asciinema.org/a/376454)
+
 [gdb]: https://www.gnu.org/software/gdb/
