@@ -146,4 +146,15 @@ We skippen dus eerst over `kinit` en zetten dan pas een breakpoint.
 
 [![asciicast](img/backtrace.svg)](https://asciinema.org/a/376476)
 
+# Verschillende CPUs inspecteren
+
+Als er gestopt wordt voor een breakpoint, stoppen alle CPUs maar zien we initieel de context van de CPU die het breakpoint bereikt heeft.
+We kunnen echter ook naar de andere CPUs gaan kijken.
+- `info threads`: Toon voor alle CPUs hun id (waarme je er later naar kan verwijzen) en de functie die ze momenteel aan het utvoeren zijn.
+  De huidige CPU wordt aangeduid met een `*`.
+- `thread id` (`t`): Switch naar de CPU met id `id`.
+  Vanaf nu kan je op deze CPU commando's beginnen uitvoeren (zoals `backtrace` of `frame`).
+
+[![asciicast](img/threads.svg)](https://asciinema.org/a/376486)
+
 [gdb]: https://www.gnu.org/software/gdb/
