@@ -132,4 +132,18 @@ Als je een `struct` print, zullen alle members getoond worden.
 
 [![asciicast](img/printing.svg)](https://asciinema.org/a/376470)
 
+# Stack frames inspecteren
+
+Wanneer het programma gestopt is, kan je buiten de huidige functie, ook de stack frames van alle functies hoger op de call stack bekijken.
+- `backtrace` (`bt`): Print de backtrace.
+  Dit print alle functie oproepen die tot de huidige functie hebben geleid.
+  Elk frame wordt vooraf gegegaan door een nummer `#n` dat je kan gebruiken om naar dit frame te verwijzen.
+- `frame n` (`f`): Switch naar frame `#n`.
+  Je kan dan variabelen binnen dit frame printen.
+
+In het volgende voorbeeld bekijken we de backtrace van `kfree` de eerste keer at het opgeroepen wordt na `kinit`.
+We skippen dus eerst over `kinit` en zetten dan pas een breakpoint.
+
+[![asciicast](img/backtrace.svg)](https://asciinema.org/a/376476)
+
 [gdb]: https://www.gnu.org/software/gdb/
