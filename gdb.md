@@ -1,4 +1,9 @@
 - [Installatie](#installatie)
+- [Breakpoints](#breakpoints)
+- [Stepping](#stepping)
+- [Variabelen printen](#variabelen-printen)
+- [Stack frames inspecteren](#stack-frames-inspecteren)
+- [Verschillende CPUs inspecteren](#verschillende-cpus-inspecteren)
 
 # Installatie
 
@@ -50,38 +55,6 @@ GNU gdb (GDB) 10.1
 </pre>
 
 We kunnen nu commando's ingeven achter de `(gdb)`-prompt.
-
-Dit zijn enkele belangrijke commando's:
-- `continue` (`c`): ga verder met uitvoeren.
-  Dit kan gebruikt worden om xv6 te starten als het nog niet aan het uitvoeren is of om de uitvoering na een breakpoint verder te zetten.
-- `break symbol` (`b`): zet een breakpoint op het adres van `symbol`.
-  Als dit adres wordt uitgevoerd, zal de processor stoppen en kan je in GDB commando's uitvoeren.
-- `backtrace` (`bt`): print een backtrace uit.
-- `quit` (`q`, <kbd>CTRL</kbd> + <kbd>D</kbd>): sluit GDB af.
-
-De commando's worden kort getoond in de volgende GDB-sessie:
-
-<pre>
-0x0000000000001000 in ?? ()
-(gdb) b fork
-Breakpoint 1 at 0x80001ee0: file kernel/proc.c, line 267.
-(gdb) c
-Continuing.
-[Switching to Thread 1.2]
-
-Thread 2 hit Breakpoint 1, fork () at kernel/proc.c:267
-267     {
-(gdb) bt
-#0  fork () at kernel/proc.c:267
-#1  0x0000000080002cf8 in sys_fork () at kernel/sysproc.c:29
-#2  0x0000000080002c6c in syscall () at kernel/syscall.c:142
-#3  0x0000000080002956 in usertrap () at kernel/trap.c:67
-#4  0x0000000000000050 in ?? ()
-(gdb) q
-Detaching from program: , process 1
-Ending remote debugging.
-[Inferior 1 (process 1) detached]
-</pre>
 
 # Breakpoints
 
