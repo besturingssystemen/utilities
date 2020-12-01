@@ -108,4 +108,16 @@ Je kan GDB op elk moment handmatig stoppen door <kbd>CTRL</kbd>+<kbd>C</kbd> te 
 
 [![asciicast](img/breakpoints.svg)](https://asciinema.org/a/376454)
 
+# Stepping
+
+In plaats van het programma verder te laten uitvoeren tot het volgende breakpoint met `continue`, kan je het ook in kleinere stappen laten uitvoeren:
+- `step` (`s`): Voer uit tot de volgende regel C-code.
+  Dit zal functie oproepen binnengaan.
+- `next` (`n`): Voor uit tot de volgende regel C-code _binnen de huidige functie_.
+  Functie oproepen worden dus uitgevoerd tot ze terugkeren in de huidige functie.
+- `finish` (`fin`): Voer de huidige functie uit tot net na de return.
+  De eventuele returnwaarde wordt afgeprint.
+
+[![asciicast](img/stepping.svg)](https://asciinema.org/a/376462)
+
 [gdb]: https://www.gnu.org/software/gdb/
