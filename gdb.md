@@ -9,7 +9,7 @@
 
 Om xv6 te debuggen, zullen we gebruik maken van [GDB][gdb].
 Helaas is er heeft Ubuntu standaard geen packages voor de RISC-V versie van GDB en zullen we deze handmatig moeten installeren.
-Download daarvoor het bestand `gdb-riscv64-unknown-elf_10.1-1_amd64.deb` van Toledo (onder "Documenten", "Oefenzittingen") en voer de volgende commando's uit in een terminal:
+Download daarvoor het bestand `gdb-riscv64-unknown-elf_10.1-1_amd64.deb` ([link](https://github.com/besturingssystemen/utilities/raw/master/gdb-riscv64-unknown-elf_10.1-1_amd64.deb)).
 
 ```shell
 cd Downloads
